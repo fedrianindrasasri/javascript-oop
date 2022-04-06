@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parameter di Constructor Function</title>
+</head>
+
+<body>
+
+    <!--
+        karena dalam JS, class berbentuk fucntion, jadi secara default, function tersebut bisa memiliki parameter
+    -->
+
+    <script>
+        // pembuatan class JS versi lama sebelum ES6
+        function Person(firstName, lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+
+            this.sayHello = function (name) {
+                console.info(`Hello ${name}, My name is ${this.firstName}`);
+            }
+        }
+
+        const fedrian = new Person("Fedrian", "Sasri");
+        fedrian.sayHello("Indra");
+
+        const indra = new Person("Indra", "Sasri");
+        indra.sayHello("Fedrian");
+
+        console.log(fedrian);
+        console.log(indra);
+
+    </script>
+</body>
+
+</html>

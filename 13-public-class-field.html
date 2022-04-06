@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Public Class Field</title>
+</head>
+
+<body>
+    <!--
+        biasanya saat kita ingin menambahkan field, kita biasanya tambahkan di constructor
+        namun ada proposal baru di ES yang mengajukan pembuatan publc class field ditempatkan diluar constructor,
+            selevel dengan penempatan method
+        proposal ini masih belum final, namun ada beberapa browser sudah mendukungnya
+
+        dalam proposal tersebut juga disebutkan bahwa ES akan mendukung access modifier public dan private
+        untuk membuat public class field, kita bisa langsugn buat nama field dengan value nya selevel dengan method
+        jika kita tidak memasukkan value kedalam field tesebut, artinya field tersebut memiliki value undefined
+    -->
+
+    <script>
+
+        class Customer {
+            firstName;
+            lastName;
+            balance = 0;
+
+            constructor(firstName, lastName) {
+                this.firstName = firstName;
+                this.lastName = lastName;
+            }
+        }
+
+        const fedrian = new Customer("Fedrian", "Sasri");
+        console.info(fedrian);
+
+    </script>
+</body>
+
+</html>

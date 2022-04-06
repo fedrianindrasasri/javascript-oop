@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class</title>
+</head>
+
+<body>
+
+    <!--
+        sejak ES6, diperkenalkan kata kunci baru, yaitu class, ini merupakan kata kunci yang digunakan untuk membuat class di JS
+        dengan kata kunci class, kita tidak perlu lagi menggunakn constructor function untuk membuat class
+    
+
+        <==CONSTRUCTOR==>
+        di class kita juga bisa menambahkan constructor, dimana dengan menggunakan constructor, kita juga bisa menambah
+            parameter saat pertama kali membuat objectnya
+        untuk membuat constructor di class, kita bisa menggunakan kata kunci constructor
+
+        
+        <==PROPERTY DI CLASS==>
+        sama seperti pada constructor function, dalam class pun kita bisa menambahkan property
+        karena hasil akhirnya adalah sebuah object, jadi menambahkan proprerty di class bisa juga dilakukan di instance object nya
+    
+    
+        <==METHOD DI CLASS==>
+        membuat method di class sebenarnya bisa dilakukan dengan cara seperti menambahkan method di constructor function
+        namun, hal tersebut sebenarnya menambahkan method kedalam instance object
+        khusus untuk method sebaiknya kita menambahkan ke prototype, bukan ke instance object
+        untungnya di class, ada cara mudah menambahkan method dan secara otomatis ditambahkan ke prototype
+    -->
+
+    <script>
+        class Person {
+            constructor(name) {
+                // console.info(`Membuat person ${name}`);
+                this.name = name;
+            }
+
+            sayHello(name) {
+                console.info(`Hello ${name}, My Name is  ${this.name}`);
+            }
+        }
+
+        const fedrian = new Person("Fedrian");
+        console.info(fedrian);
+        console.info(fedrian.name);
+        fedrian.sayHello("Indra");
+    </script>
+
+</body>
+
+</html>

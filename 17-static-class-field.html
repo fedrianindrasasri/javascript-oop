@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static Class Field</title>
+</head>
+
+<body>
+    <!--
+        static adalah kata kunci yang bisa kita tambahkan sebelum field atau method, biasanya ketika kita
+            membuat sebuah field atau method, maka secara otomatis field akan menjadi property di instance object,
+            dan method akan menjadi function di prototype
+        jika kita tambahkan kata static, maka hal itu tidak terjadi
+    -->
+    <script>
+
+        class Configuration {
+            static name = "Muslim Dev";
+            static version = 1.0;
+            static author = "Fedrian Indra Sasri"
+        }
+
+        Configuration.author = "Fedrian Indra";
+
+        console.info(Configuration.name);
+        console.info(Configuration.version);
+        console.info(Configuration.author);
+    </script>
+</body>
+
+</html>

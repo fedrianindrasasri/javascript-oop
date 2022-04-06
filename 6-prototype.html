@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype</title>
+</head>
+
+<body>
+
+    <!--
+        JS sebelumnya dikenal dengan bahasa pemrograman berbasis prototype
+        memang agak sedikit membingungkan, dan tidak dipungkiri, banyak sekali yang bingung dengan konsep prototype di JS
+        pada kali ini kita akan bahas prototype
+
+
+        PROTOTYPE INHERITANCE
+        saat kita membuat object dari constructor function, object tersebut disebut instance, semua property
+            (baik itu value atau method), akan berada didalam instance objectnya
+        setiap kita membuat sebuah constructor function, maka secara otomatis akan dibuatkan prototype nya,
+            misal ketika kita membuat constructor function Person, maka akan ada Person.prototype
+        saat kita membuat sebuah object instance, secara otomatis object tersebut adalah turunan dari constructor.prototype nya
+        untuk mengakses prototype nya milik sebuah instance, kita bisa menggunakan __proto__
+
+        MENAMBAH PROPERTY KE PROTOTYPE
+        property mirip object, dimana kita bisa menambah property baik itu value ataupun method
+        saat kita menambah sebuah property ke prototype, secara otomatis semua object instance yang turunan dari prototype
+            teresbut akan memiliki property tersebut.
+        
+    -->
+
+    <script>
+        function Person(firstName, lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+
+            this.sayHello = function (name) {
+                console.info(`Hello ${name}, My name is ${this.firstName}`);
+            }
+        }
+
+        Person.prototype.sayBye = function () {
+            console.info("Good Bye");
+        }
+
+        Person.prototype.run = function () {
+            console.info(`${this.firstName} is running`);
+        }
+
+        const fedrian = new Person("Fedrian", "Sasri");
+        // fedrian.sayBye = function () {
+        //     console.info("Good Bye");
+        // }
+
+        const indra = new Person("Indra", "Sasri");
+
+        console.log(fedrian);
+        console.log(indra);
+
+        fedrian.sayBye();
+        fedrian.run();
+    </script>
+
+</body>
+
+</html>
